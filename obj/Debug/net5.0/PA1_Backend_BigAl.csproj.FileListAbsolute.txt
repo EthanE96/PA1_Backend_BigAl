@@ -1,0 +1,16 @@
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\bin\Debug\net5.0\PA1_Backend_BigAl.exe
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\bin\Debug\net5.0\PA1_Backend_BigAl.deps.json
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\bin\Debug\net5.0\PA1_Backend_BigAl.runtimeconfig.json
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\bin\Debug\net5.0\PA1_Backend_BigAl.runtimeconfig.dev.json
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\bin\Debug\net5.0\PA1_Backend_BigAl.dll
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\bin\Debug\net5.0\ref\PA1_Backend_BigAl.dll
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\bin\Debug\net5.0\PA1_Backend_BigAl.pdb
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\PA1_Backend_BigAl.csproj.AssemblyReference.cache
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\PA1_Backend_BigAl.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\PA1_Backend_BigAl.AssemblyInfoInputs.cache
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\PA1_Backend_BigAl.AssemblyInfo.cs
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\PA1_Backend_BigAl.csproj.CoreCompileInputs.cache
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\PA1_Backend_BigAl.dll
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\ref\PA1_Backend_BigAl.dll
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\PA1_Backend_BigAl.pdb
+C:\Users\Ethan\OneDrive - The University of Alabama\Code\MIS_321\PA1_Backend_BigAl\obj\Debug\net5.0\PA1_Backend_BigAl.genruntimeconfig.cache
