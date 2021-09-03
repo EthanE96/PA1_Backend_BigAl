@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace PA1_Backend_BigAl
 {
@@ -6,34 +7,47 @@ namespace PA1_Backend_BigAl
     {
         static void Main(string[] args)
         {
+            DataFile file = new DataFile(){fileName= "posts.txt"};
+            List<Posts> bigAlPosts = file.ReadFile();
+
             System.Console.WriteLine("Big Al's Posts!");
             System.Console.WriteLine();
-            Menu();
+            Menu(bigAlPosts);
         }
 
-        static void Menu(){
+        static void Menu(List<Posts> bigAlPosts){
             string userAns = ""; 
             while (userAns != "exit"){
                 MenuDisplay();
                 userAns = Console.ReadLine().ToLower();
                 switch (userAns){
                     case "show all posts":
-                    Posts();
+                        Console.Clear();
+                        foreach (Posts post in bigAlPosts)
+                        {
+                            System.Console.WriteLine($"Post ID: {post.postID}, Post: {post.postText}, Timestamp: {post.timeDate}");
+                        }
+                        
                     break;
                     case "add a post":
-                    Add();
+                        Console.Clear();
+                    
+
                     break;
                     case "delete a post":
-                    Delete();
+                        Console.Clear();
+                    
+
+
                     break;
                     case "exit":
                     userAns = "exit";
                     break;
                     default:
+                    Console.Clear();
                     System.Console.WriteLine("Invaild response, try again");
                     break;
                 }
-                Console.Clear();
             }
         }
 
@@ -44,14 +58,6 @@ namespace PA1_Backend_BigAl
             System.Console.WriteLine("\u25A0   'Exit'");
         }
 
-        static void Posts(){
-
-        }
-        static void Add(){
-
-        }
-        static void Delete(){
-
-        }
+    
     }
 }
