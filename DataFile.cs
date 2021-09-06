@@ -13,15 +13,11 @@ namespace PA1_Backend_BigAl
         */
         
         public string fileName { get; set; }
-        public List<Posts> bigAlPosts {get; set; }
+        public List<Posts> bigAlPosts { get; set; }
         public List<Posts> ReadFile(){
-            
-            /*
-            The file read should use a try catch and successfully work if
-            nothing is returned or if the file does not exist.
-            */
+            /* The file read should use a try catch and successfully work if
+            nothing is returned or if the file does not exist. */
 
-            List<Posts> bigAlPosts = new List<Posts>();
             //open
             StreamReader inFile = new StreamReader(fileName);
             
@@ -34,9 +30,11 @@ namespace PA1_Backend_BigAl
                     postID = int.Parse(data[0]),
                     postText = data[1],
                     timeDate = DateTime.Parse(data[2])});
+                tempLine = inFile.ReadLine();
             }
         
-            /* Figure out how t`o sort by descending timestamp order */
+            /* Figure out how to sort by descending timestamp order */
+                //first sort list then populate to file
 
             //close
             inFile.Close();
@@ -44,6 +42,19 @@ namespace PA1_Backend_BigAl
         }
 
         public void WriteFile(){
+            //open
+            StreamWriter outFile = new StreamWriter (fileName);
+
+            //process
+            foreach (Posts post in bigAlPosts){
+                outFile.WriteLine($"{post.postID}#{post.postText}#{post.timeDate}");
+            }
+
+            //close
+            outFile.Close();
+        }
+
+        public void listSort(){
 
         }
 
