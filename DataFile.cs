@@ -5,13 +5,7 @@ using System.IO;
 namespace PA1_Backend_BigAl
 {
     public class DataFile
-    {
-        /*
-        Create a DateTime from a String string dateString = "7/10/1974 7:10:24 AM";  
-        DateTime dateFromString = DateTime.Parse(dateString, System.Globalization.CultureInfo.InvariantCulture);  
-        Console.WriteLine(dateFromString.ToString());  
-        */
-        
+    {        
         public string fileName { get; set; }
         public List<Posts> bigAlPosts { get; set; }
         public List<Posts> ReadFile(){
@@ -33,15 +27,14 @@ namespace PA1_Backend_BigAl
                 tempLine = inFile.ReadLine();
             }
         
-            /* Figure out how to sort by descending timestamp order */
-                //first sort list then populate to file
-
             //close
             inFile.Close();
+            ListSort();
             return bigAlPosts;
         }
 
         public void WriteFile(){
+            ListSort();
             //open
             StreamWriter outFile = new StreamWriter (fileName);
 
@@ -54,8 +47,8 @@ namespace PA1_Backend_BigAl
             outFile.Close();
         }
 
-        public void listSort(){
-
+        public void ListSort(){
+            bigAlPosts.Sort((x, y) => DateTime.Compare(x.timeDate, y.timeDate));
         }
 
     }
