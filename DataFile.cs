@@ -9,15 +9,25 @@ namespace PA1_Backend_BigAl
         public string fileName { get; set; }
         public List<Posts> bigAlPosts { get; set; }
         public List<Posts> ReadFile(){
-            /* The file read should use a try catch and successfully work if
-            nothing is returned or if the file does not exist. */
+            bigAlPosts = new List<Posts>();
 
             //open
-            StreamReader inFile = new StreamReader(fileName);
+            StreamReader inFile = null;
             
+            //Try catch works if nothing is returned or if the file doesn't exist
+            try {
+                inFile = new StreamReader("posts.txt");
+            }
+            catch (FileNotFoundException e) {
+                System.Console.WriteLine($"File not found, returning blank list {e}");
+                return bigAlPosts;
+            }
+    
             //process
             string tempLine = inFile.ReadLine();
             
+            //List of post object poulated with the data from file
+            //Auto implemented properties
             while (tempLine != null){
                 string[] data = tempLine.Split("#");
                 bigAlPosts.Add(new Posts(){
@@ -34,6 +44,8 @@ namespace PA1_Backend_BigAl
         }
 
         public void WriteFile(){
+            //When ever a change is made it updates the file and sorts
+
             ListSort();
             //open
             StreamWriter outFile = new StreamWriter (fileName);
@@ -48,8 +60,9 @@ namespace PA1_Backend_BigAl
         }
 
         public void ListSort(){
+            //Displays posts in descending timestamp order
+            //List sort method used to sort the data
             bigAlPosts.Sort((x, y) => DateTime.Compare(x.timeDate, y.timeDate));
         }
-
     }
 }

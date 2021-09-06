@@ -7,24 +7,25 @@ namespace PA1_Backend_BigAl
     {
         static void Main(string[] args)
         {
-            DataFile file = new DataFile(){fileName= "posts.txt", bigAlPosts= new List<Posts>()};
-            file.ReadFile();
+            DataFile file = new DataFile(){fileName= "posts.txt"};
 
-            Console.Clear();
             System.Console.WriteLine("Big Al's Posts!");
             System.Console.WriteLine();
-            Menu(file.bigAlPosts, file);
+            Menu(file);
         }
 
-        static void Menu(List<Posts> bigAlPosts, DataFile file){
-            string userAns = ""; 
+        static void Menu(DataFile file){
+            string userAns = "";
             while (userAns != "exit"){
                 MenuDisplay();
                 userAns = Console.ReadLine().ToLower();
                 switch (userAns){
                     case "show all posts":
-
-                        Console.Clear();
+                        
+                        List<Posts> bigAlPosts = file.ReadFile();
+                        //foreach loop to display the posts
+                        System.Console.WriteLine();
+                        
                         foreach (Posts post in bigAlPosts)
                         {
                             System.Console.WriteLine($"Post ID: {post.postID}, Post: {post.postText}, Timestamp: {post.timeDate}");
@@ -33,13 +34,12 @@ namespace PA1_Backend_BigAl
                                             
                     break;
                     case "add a post":
-                        Console.Clear();
+                        
                         string[] tempPost = new string[3];
 
                         System.Console.WriteLine("");
                         System.Console.WriteLine("Enter Post ID:");
                         tempPost[0] = Console.ReadLine();
-                        
                     
                         System.Console.WriteLine("");
                         System.Console.WriteLine("Enter Post Text:");
@@ -50,6 +50,7 @@ namespace PA1_Backend_BigAl
                         System.Console.WriteLine("Format: '9/4/2020 2:30:00 PM' ");
                         tempPost[2] = Console.ReadLine();
 
+                        bigAlPosts = file.ReadFile();
                         bigAlPosts.Add(new Posts(){
                             postID = int.Parse(tempPost[0]),
                             postText = tempPost[1],
@@ -59,9 +60,11 @@ namespace PA1_Backend_BigAl
 
                     break;
                     case "delete a post":
-                        Console.Clear();
+                        
                         System.Console.WriteLine("");
                         System.Console.WriteLine("What post ID do you want to delete?");
+                        
+                        bigAlPosts = file.ReadFile();
                         foreach (Posts post in bigAlPosts)
                         {
                             System.Console.WriteLine($"Post ID: {post.postID}");
@@ -77,7 +80,6 @@ namespace PA1_Backend_BigAl
                     userAns = "exit";
                     break;
                     default:
-                    Console.Clear();
                     System.Console.WriteLine("Invaild response, try again");
                     break;
                 }
@@ -89,8 +91,6 @@ namespace PA1_Backend_BigAl
             System.Console.WriteLine("\u25A0   'Add a post'");
             System.Console.WriteLine("\u25A0   'Delete a post'");
             System.Console.WriteLine("\u25A0   'Exit'");
-        }
-
-    
+        }   
     }
 }
